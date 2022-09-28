@@ -16,4 +16,41 @@ else{
 
 confirm("Now it is the computer turn! Hit 'OK' to continue.");
 
-alert("")
+var options = ['R', 'P', 'S'];
+
+var computerChoice = options[Math.floor(Math.random() * options.length)];
+
+confirm("The computer chose " + computerChoice);
+
+function whoWon (part1, computerChoice) {
+
+    if (part1===computerChoice) {
+        return "Tie!"
+    }
+    
+    if (part1 === "R" && computerChoice === "P") {
+                return "Computer wins!!"
+            }
+
+            else if (part1 === "R" && computerChoice === "S") {
+                return "You win!!"
+            }
+
+            else if (part1 === "P" && computerChoice === "R") {
+                return "You win!!"
+            }
+
+            else if (part1 === "P" && computerChoice === "S") {
+                return "Computer wins!!"
+            }
+
+            else if (part1 === "S" && computerChoice === "R") {
+                return "Computer wins!!"
+            }
+
+            else if (part1 === "S" && computerChoice === "P") {
+                return "You win!!"
+            }
+}
+
+confirm (whoWon);
