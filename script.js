@@ -1,6 +1,8 @@
 alert("Welcome to the our game.");
 
-let part1 = prompt("Your turn! Enter 'R' for 'Rock', 'P' for 'Paper' or 'S' for 'Scissors'. ");
+var part1 = prompt("Your turn! Enter 'R' for 'Rock', 'P' for 'Paper' or 'S' for 'Scissors'. ");
+
+function YouPicked (part1) {
 if (part1 === "R") {
     alert("You selected 'ROCK'.");
 }
@@ -13,45 +15,48 @@ else if (part1 === "S") {
 else {
     alert("TRY AGAIN! YOU MUST ENTER AN 'R', 'P' or 'S' .");
 }
+}
 
-confirm("Now it is the computer turn! Hit 'OK' to continue.");
+YouPicked(part1);
 
-var options = ["R", "P", "S"];
+confirm("Now it is the computer turn! Let's see who wins!!");
 
-var computerChoice = options[Math.floor(Math.random() * options.length)];
+// confirm("The computer chose " + computerChoice);//
 
-confirm("The computer chose " + computerChoice);
+function whoWon() {
 
-function whoWon(part1, computerChoice) {
+    var options = ['R', 'P', 'S'];
 
+    var computerChoice = options[Math.floor(Math.random() * options.length)];
 
     if (part1 == "R" && computerChoice == "P") {
-        return alert("Computer wins!!");
-
-    } else if (part1 == "R" && computerChoice == "S") {
-        return alert("You win!!");
+        alert("Computer chose " + computerChoice + ". Computer wins!!");
+    } 
+    
+    if (part1 == "R" && computerChoice == "S") {
+        alert("Computer chose " + computerChoice + ". You win!!");
     }
 
-    else if (part1 == "P" && computerChoice == "R") {
-        return alert("You win!!");
+    if (part1 == "P" && computerChoice == "R") {
+        alert("Computer chose " + computerChoice + ". You win!!");
     }
 
-    else if (part1 == "P" && computerChoice == "S") {
-        return alert("Computer wins!!");
+    if (part1 == "P" && computerChoice == "S") {
+        alert("Computer chose " + computerChoice + ". Computer wins!!");
     }
 
-    else if (part1 == "S" && computerChoice == "R") {
-        return alert("Computer wins!!");
+    if (part1 == "S" && computerChoice == "R") {
+        alert("Computer chose " + computerChoice + ". Computer wins!!");
     }
 
-    else if (part1 == "S" && computerChoice == "P") {
-        return alert("You win!!");
+    if (part1 == "S" && computerChoice == "P") {
+        alert("Computer chose " + computerChoice + ". You win!!");
     }
-    else {
-        return alert("Tie!");
-
+    
+    if (part1 == computerChoice) {
+        alert("Computer chose " + computerChoice + ". Tie!");
     }
 }
 
 whoWon();
-confirm("Do you want to play another round?");
+
